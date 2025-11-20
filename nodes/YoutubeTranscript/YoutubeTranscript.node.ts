@@ -8,7 +8,25 @@ import {
     INodeTypeDescription,
 } from 'n8n-workflow';
 
-import { YoutubeTranscript as YoutubeTranscriptApi } from 'youtube-transcript';
+const { getSubtitles } = require('youtube-caption-extractor');
+
+function convertToSRT(captions: any[]): string {
+    return captions.map((caption, index) => {
+        const startTime = parseFloat(caption.start);
+        const duration = parseFloat(caption.dur);
+        const endTime = startTime + duration;
+
+        const formatTime = (seconds: number): string => {
+            const hours = Math.floor(seconds / 3600);
+            const minutes = Math.floor((seconds % 3600) / 60);
+            const secs = Math.floor(seconds % 60);
+            const millis = Math.floor((seconds % 1) * 1000);
+            return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')},${String(millis).padStart(3, '0')}`;
+        };
+
+        return `${index + 1}\n${formatTime(startTime)} --> ${formatTime(endTime)}\n${caption.text}\n`;
+    }).join('\n');
+}
 
 export class YoutubeTranscript implements INodeType {
     description: INodeTypeDescription = {
@@ -37,8 +55,8 @@ export class YoutubeTranscript implements INodeType {
                 displayName: 'Language',
                 name: 'language',
                 type: 'string',
-                default: 'en',
-                description: 'The language code for the transcript (e.g., en, ko). Note: This library attempts to fetch the requested language but may fallback or fail if not available.',
+                default: 'ko',
+                description: 'The language code for the transcript (e.g., en, ko)',
             },
         ],
     };
@@ -58,14 +76,17 @@ export class YoutubeTranscript implements INodeType {
                     videoId = urlMatch[1];
                 }
 
-                const transcript = await YoutubeTranscriptApi.fetchTranscript(videoId, {
+                const captions = await getSubtitles({
+                    videoID: videoId,
                     lang: language,
                 });
+
+                const srtContent = convertToSRT(captions);
 
                 returnData.push({
                     json: {
                         videoId,
-                        transcript,
+                        srt: srtContent,
                     },
                 });
             } catch (error) {
