@@ -1,6 +1,6 @@
 {
     "name": "@choisb87/n8n-nodes-sb-youtube",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "n8n community node to fetch YouTube auto-generated captions/transcripts in SRT format",
     "keywords": [
         "n8n-community-node-package",
@@ -11,6 +11,14 @@
     ],
     "license": "MIT",
     "author": "choisb87",
+    "homepage": "https://github.com/choisb87/sb-youtube#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/choisb87/sb-youtube.git"
+    },
+    "bugs": {
+        "url": "https://github.com/choisb87/sb-youtube/issues"
+    },
     "main": "index.js",
     "scripts": {
         "build": "tsc",
