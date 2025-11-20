@@ -1,0 +1,36 @@
+{
+    "name": "n8n-nodes-youtube-transcript",
+    "version": "0.1.0",
+    "description": "n8n node to get YouTube video transcripts",
+    "keywords": [
+        "n8n-community-node-package"
+    ],
+    "license": "MIT",
+    "author": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "tsc",
+        "dev": "tsc --watch",
+        "test": "jest"
+    },
+    "files": [
+        "dist"
+    ],
+    "n8n": {
+        "nodes": [
+            "dist/nodes/YoutubeTranscript/YoutubeTranscript.node.js"
+        ]
+    },
+    "devDependencies": {
+        "@types/jest": "^29.0.0",
+        "@types/node": "^18.0.0",
+        "jest": "^29.0.0",
+        "n8n-workflow": "*",
+        "n8n-core": "*",
+        "ts-jest": "^29.0.0",
+        "typescript": "^5.0.0"
+    },
+    "dependencies": {
+        "youtube-transcript": "^1.2.1"
+    }
+}
