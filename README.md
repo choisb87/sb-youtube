@@ -1,6 +1,8 @@
-# n8n-nodes-youtube-transcript
+# @choisb87/sb-youtube
 
-n8n community node to fetch YouTube video transcripts/captions in SRT format.
+n8n community node to fetch YouTube auto-generated captions/transcripts in SRT format.
+
+> **Note**: This node fetches auto-generated captions from YouTube videos and returns them as SRT (SubRip subtitle) format strings.
 
 ## Installation
 

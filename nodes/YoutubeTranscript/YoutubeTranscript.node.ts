@@ -54,9 +54,51 @@ export class YoutubeTranscript implements INodeType {
             {
                 displayName: 'Language',
                 name: 'language',
-                type: 'string',
+                type: 'options',
+                options: [
+                    {
+                        name: 'Korean (한국어)',
+                        value: 'ko',
+                    },
+                    {
+                        name: 'English',
+                        value: 'en',
+                    },
+                    {
+                        name: 'Japanese (日本語)',
+                        value: 'ja',
+                    },
+                    {
+                        name: 'Chinese (中文)',
+                        value: 'zh',
+                    },
+                    {
+                        name: 'Spanish (Español)',
+                        value: 'es',
+                    },
+                    {
+                        name: 'French (Français)',
+                        value: 'fr',
+                    },
+                    {
+                        name: 'German (Deutsch)',
+                        value: 'de',
+                    },
+                    {
+                        name: 'Portuguese (Português)',
+                        value: 'pt',
+                    },
+                    {
+                        name: 'Russian (Русский)',
+                        value: 'ru',
+                    },
+                    {
+                        name: 'Italian (Italiano)',
+                        value: 'it',
+                    },
+                ],
                 default: 'ko',
-                description: 'The language code for the transcript (e.g., en, ko)',
+                description: 'Select the language for the transcript',
             },
         ],
     };
