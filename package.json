@@ -1,6 +1,6 @@
 {
     "name": "@choisb87/sb-youtube",
-    "version": "0.2.2",
+    "version": "0.2.3",
     "description": "n8n community node to fetch YouTube auto-generated captions/transcripts in SRT format",
     "keywords": [
         "n8n-community-node-package",
