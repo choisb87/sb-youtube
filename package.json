@@ -1,12 +1,12 @@
 {
-    "name": "n8n-nodes-youtube-transcript",
+    "name": "@choisb87/sb-youtube",
     "version": "0.1.0",
-    "description": "n8n node to get YouTube video transcripts",
+    "description": "n8n node to get YouTube video transcripts in SRT format",
     "keywords": [
         "n8n-community-node-package"
     ],
     "license": "MIT",
-    "author": "",
+    "author": "choisb87",
     "main": "index.js",
     "scripts": {
         "build": "tsc",
