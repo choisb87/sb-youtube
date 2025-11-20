@@ -1,4 +1,4 @@
-# @choisb87/sb-youtube
+# @choisb87/n8n-nodes-sb-youtube
 
 n8n community node to fetch YouTube auto-generated captions/transcripts in SRT format.
 
@@ -7,12 +7,12 @@ n8n community node to fetch YouTube auto-generated captions/transcripts in SRT f
 ## Installation
 
 ```bash
-npm install @choisb87/sb-youtube
+npm install @choisb87/n8n-nodes-sb-youtube
 ```
 
 Or install directly in n8n:
 1. Go to Settings > Community Nodes
-2. Enter `@choisb87/sb-youtube`
+2. Enter `@choisb87/n8n-nodes-sb-youtube`
 3. Click Install
 
 ## Usage
